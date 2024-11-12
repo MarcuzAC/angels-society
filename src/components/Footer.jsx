@@ -5,19 +5,20 @@ const Footer = () => {
     textAlign: "center",
     backgroundColor: "#333",
     color: "white",
-    padding: "0.5rem", // Reduced padding to make the footer smaller
-    fontSize: "0.9rem", // Reduced font size for a compact footer
-    marginTop: "2rem",
+    padding: "0.5rem",
+    fontSize: "0.9rem",
   };
 
-  const paragraphStyle = {
-    margin: "0.3rem 0", // Reduced margin between paragraphs
+  const smallFooterStyle = {
+    ...footerStyle,
+    fontSize: "0.8rem",
+    padding: "0.3rem",
   };
 
   return (
     <footer style={footerStyle}>
-      <p style={paragraphStyle}>© 2024 Angels Society. All rights reserved.</p>
-      <p style={paragraphStyle}>Contact us: angelssocietymw@gmail.com</p>
+      <p>© 2024 Angels Society. All rights reserved.</p>
+      <p>Contact us: angelssocietymw@gmail.com</p>
     </footer>
   );
 };

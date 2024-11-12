@@ -7,6 +7,8 @@ import About from "./components/About";
 import Programs from "./components/Programs";
 import GetInvolved from "./components/GetInvolved";
 import Contact from "./components/Contact";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
   const appStyle = {
