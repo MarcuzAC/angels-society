@@ -18,7 +18,6 @@ const Footer = () => {
   return (
     <footer style={footerStyle}>
       <p>© 2024 Angels Society. All rights reserved.</p>
-      <p>Contact us: angelssocietymw@gmail.com</p>
     </footer>
   );
 };

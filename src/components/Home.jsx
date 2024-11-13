@@ -6,24 +6,24 @@ const Home = () => {
   const homeStyle = {
     textAlign: "center",
     padding: "2rem",
-    background: `url(${backgroundImage}) no-repeat center center`, // Set the background image
-    backgroundSize: "cover", // Ensure the image covers the entire section
-    height: "100vh", // Optional: makes sure the section covers the full viewport height
+    background: `url(${backgroundImage}) no-repeat center center`,
+    backgroundSize: "cover", 
+    height: "100vh",
   };
 
   const headingStyle = {
     fontSize: "2.5rem",
-    color: "#034694", // Chelsea blue for the heading
+    color: "#034694", 
   };
 
   const paragraphStyle = {
     fontSize: "1.2rem",
-    color: "#333", // Darker text for better contrast
+    color: "#333",
   };
 
   const animatedTextStyle = {
     fontSize: "1.5rem",
-    color: "#034694", // Chelsea blue for animated text
+    color: "#034694", 
     marginTop: "1rem",
     fontWeight: "bold",
   };
