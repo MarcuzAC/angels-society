@@ -1,11 +1,14 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
+import backgroundImage from "../assets/angelshome.jpeg"; 
 
 const Home = () => {
   const homeStyle = {
     textAlign: "center",
     padding: "2rem",
-    background: "linear-gradient(to bottom, #eaf4fc, #ffffff)", // Light blue background
+    background: `url(${backgroundImage}) no-repeat center center`, // Set the background image
+    backgroundSize: "cover", // Ensure the image covers the entire section
+    height: "100vh", // Optional: makes sure the section covers the full viewport height
   };
 
   const headingStyle = {
