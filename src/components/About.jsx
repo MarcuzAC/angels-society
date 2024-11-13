@@ -1,34 +1,57 @@
 import React from "react";
 
-// Import images from the assets folder
-import frankImage from "../assets/kaondo.jpeg"; 
-import nelsonImage from "../assets/nazo.jpeg"; 
-import trinityImage from "../assets/shawa.jpeg"; 
-//import samuelImage from "../assets/samuel-moyo.jpeg"; 
-//import mariaImage from "../assets/maria-banda.jpeg";
+// Import images for executives
+import frankImage from "../assets/kaondo.jpeg";
+import nelsonImage from "../assets/nazo.jpeg";
+import kondwaImage from "../assets/kondwa.jpeg";
 
 // Dummy data for the executive members
 const executives = [
+  {
+    name: "Nalson Ramzie Nazombe",
+    position: "Executive Director",
+    contact: "+265 882 98 88 02",
+    email: "n.n@angelssocietymw.com",
+    image: nelsonImage,
+  },
   {
     name: "Frank Kaondo",
     position: "Programs Manager",
     contact: "+265 986 61 61 01",
     email: "f.kaondo@angelssocietymw.com",
-    image: frankImage, // Updated to import image from assets folder
+    image: frankImage,
   },
   {
-    name: "Nelson Nazombe",
-    position: "Managing Director",
-    contact: "+265 882 98 88 02",
-    email: "n.nazombe@angelssocietymw.com",
-    image: nelsonImage, // Updated to import image from assets folder
+    name: "Kondwani Patrick Waya",
+    position: "Finance and Administration Manager",
+    contact: "+265 888 47 16 61 55",
+    email: "fam@angelssocietymw.com",
+    image: kondwaImage,
+  },
+];
+
+// Dummy data for the board members
+const board = [
+  {
+    name: "Mary Banda",
+    position: "Chairperson",
+    contact: "+265 999 11 22 33",
+    email: "mary.banda@example.com",
+    image: "https://via.placeholder.com/150",
   },
   {
-    name: "Trinity Shawa",
+    name: "James Phiri",
     position: "Secretary",
-    contact: "+265 999 456 789",
-    email: "t.shawa@angelssocietymw.com",
-    image: trinityImage, // Updated to import image from assets folder
+    contact: "+265 888 22 33 44",
+    email: "james.phiri@example.com",
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Patricia Mvula",
+    position: "Treasurer",
+    contact: "+265 777 33 44 55",
+    email: "patricia.mvula@example.com",
+    image: "https://via.placeholder.com/150",
   },
 ];
 
@@ -37,21 +60,57 @@ const About = () => {
     <section style={styles.aboutSection}>
       <h2>About Us</h2>
       <p>
-        Angels Society is a non-profit organization founded by clinical medicine students
-        to bridge healthcare gaps in Malawi.
+        Angels Society is a non-profit organization founded by medical
+        practitioners to bridge healthcare gaps in Malawi.
       </p>
-      
-      <h3>Our Executive Members</h3>
-      
+
+      {/* Executives Section */}
+      <h3>Secreteriate</h3>
       <div style={styles.tilesContainer}>
         {executives.map((executive, index) => (
           <div key={index} style={styles.tile}>
-            <img src={executive.image} alt={executive.name} style={styles.image} />
+            <img
+              src={executive.image}
+              alt={executive.name}
+              style={styles.image}
+            />
             <div style={styles.info}>
               <h4>{executive.name}</h4>
-              <p><strong>Position:</strong> {executive.position}</p>
-              <p><strong>Contact:</strong> {executive.contact}</p>
-              <p><strong>Email:</strong> {executive.email}</p>
+              <p>
+                <strong>Position:</strong> {executive.position}
+              </p>
+              <p>
+                <strong>Contact:</strong> {executive.contact}
+              </p>
+              <p>
+                <strong>Email:</strong> {executive.email}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Board Members Section */}
+      <h3>Board Members</h3>
+      <div style={styles.tilesContainer}>
+        {board.map((member, index) => (
+          <div key={index} style={styles.tile}>
+            <img
+              src={member.image}
+              alt={member.name}
+              style={styles.image}
+            />
+            <div style={styles.info}>
+              <h4>{member.name}</h4>
+              <p>
+                <strong>Position:</strong> {member.position}
+              </p>
+              <p>
+                <strong>Contact:</strong> {member.contact}
+              </p>
+              <p>
+                <strong>Email:</strong> {member.email}
+              </p>
             </div>
           </div>
         ))}
@@ -69,8 +128,8 @@ const styles = {
   },
   tilesContainer: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))", // Grid with responsive columns
-    gap: "1.5rem", // Space between tiles
+    gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+    gap: "1.5rem",
     marginTop: "2rem",
   },
   tile: {
