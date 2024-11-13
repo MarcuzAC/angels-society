@@ -1,7 +1,7 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 import backgroundImage from "../assets/angelshome.jpeg"; 
-import "./Home.css"
+
 
 
 const Home = () => {
