@@ -14,11 +14,11 @@ const App = () => {
   const appStyle = {
     display: "flex",
     flexDirection: "column",
-    minHeight: "100vh", // Ensures the container fills the viewport
+    minHeight: "100vh",
   };
 
   const contentStyle = {
-    flex: 1, // Pushes the footer to the bottom by taking up available space
+    flex: 1, 
   };
 
   return (

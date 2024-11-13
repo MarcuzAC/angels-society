@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png"; 
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,22 +9,25 @@ const Navbar = () => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "#4caf50",
+    backgroundColor: "#034694", // Chelsea blue background
     padding: "1rem 2rem",
     color: "white",
+    position: "relative",
   };
 
-  const navLinksStyle = {
-    listStyle: "none",
+  const logoStyle = {
     display: "flex",
-    gap: "1rem",
-    margin: 0,
-  };
-
-  const linkStyle = {
+    alignItems: "center",
     textDecoration: "none",
     color: "white",
     fontWeight: "bold",
+    fontSize: "1.5rem",
+  };
+
+  const logoImageStyle = {
+    width: "40px", // Logo size
+    height: "40px",
+    marginRight: "10px",
   };
 
   const dropdownStyle = {
@@ -31,7 +35,7 @@ const Navbar = () => {
     position: "absolute",
     top: "60px",
     right: "10px",
-    backgroundColor: "#4caf50",
+    backgroundColor: "#034694", // Chelsea blue background
     boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
     borderRadius: "5px",
     zIndex: 1000,
@@ -56,7 +60,16 @@ const Navbar = () => {
 
   return (
     <nav style={navbarStyle}>
-      <h1>Angels Society</h1>
+      {/* Logo */}
+      <Link to="/" style={logoStyle}>
+        <img
+          src={logo} // Replace with your logo's path
+          alt="Logo"
+          style={logoImageStyle}
+        />
+        Angels Society
+      </Link>
+
       {/* Toggle Button for Small Screens */}
       <button
         style={toggleButtonStyle}
