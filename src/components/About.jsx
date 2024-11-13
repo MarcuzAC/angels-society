@@ -1,41 +1,34 @@
 import React from "react";
 
+// Import images from the assets folder
+import frankImage from "../assets/kaondo.jpeg"; 
+import nelsonImage from "../assets/nazo.jpeg"; 
+import trinityImage from "../assets/shawa.jpeg"; 
+//import samuelImage from "../assets/samuel-moyo.jpeg"; 
+//import mariaImage from "../assets/maria-banda.jpeg";
+
 // Dummy data for the executive members
 const executives = [
   {
-    name: "John Doe",
-    position: "CEO",
-    contact: "+265 999 123 456",
-    email: "john.doe@example.com",
-    image: "https://via.placeholder.com/150" // Replace with actual image URL
+    name: "Frank Kaondo",
+    position: "Programs Manager",
+    contact: "+265 986 61 61 01",
+    email: "f.kaondo@angelssocietymw.com",
+    image: frankImage, // Updated to import image from assets folder
   },
   {
-    name: "Jane Smith",
+    name: "Nelson Nazombe",
     position: "Managing Director",
-    contact: "+265 999 789 123",
-    email: "jane.smith@example.com",
-    image: "https://via.placeholder.com/150" // Replace with actual image URL
+    contact: "+265 882 98 88 02",
+    email: "n.nazombe@angelssocietymw.com",
+    image: nelsonImage, // Updated to import image from assets folder
   },
   {
-    name: "Emily Chirwa",
+    name: "Trinity Shawa",
     position: "Secretary",
     contact: "+265 999 456 789",
-    email: "emily.chirwa@example.com",
-    image: "https://via.placeholder.com/150" // Replace with actual image URL
-  },
-  {
-    name: "Samuel Moyo",
-    position: "Executive Member",
-    contact: "+265 999 321 654",
-    email: "samuel.moyo@example.com",
-    image: "https://via.placeholder.com/150" // Replace with actual image URL
-  },
-  {
-    name: "Maria Banda",
-    position: "Executive Member",
-    contact: "+265 999 654 321",
-    email: "maria.banda@example.com",
-    image: "https://via.placeholder.com/150" // Replace with actual image URL
+    email: "t.shawa@angelssocietymw.com",
+    image: trinityImage, // Updated to import image from assets folder
   },
 ];
 
