@@ -1,6 +1,8 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 import backgroundImage from "../assets/angelshome.jpeg"; 
+import "./Home.css"
+
 
 const Home = () => {
   const homeStyle = {
@@ -9,16 +11,23 @@ const Home = () => {
     background: `url(${backgroundImage}) no-repeat center center`,
     backgroundSize: "cover", 
     height: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center", 
+    alignItems: "center", 
+    color: "white",
   };
 
   const headingStyle = {
     fontSize: "2.5rem",
     color: "#034694", 
+    marginBottom: "1rem",
   };
 
   const paragraphStyle = {
     fontSize: "1.2rem",
-    color: "#333",
+    color: "#f2f2f2", // Lighter text for contrast on a background
+    marginBottom: "1.5rem",
   };
 
   const animatedTextStyle = {
