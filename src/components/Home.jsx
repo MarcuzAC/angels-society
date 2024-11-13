@@ -24,7 +24,7 @@ const Home = () => {
     left: 0,
     width: "100%",
     height: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.7)", // Adjust the alpha for desired darkness
+    backgroundColor: "rgba(0, 0, 0, 0.8)", // Adjust the alpha for desired darkness
     zIndex: 1,
   };
 
