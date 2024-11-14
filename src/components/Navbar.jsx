@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png"; 
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   const navbarStyle = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "#034694", // Chelsea blue background
-    padding: "1rem 2rem",
+    padding: "0.5rem 2rem",  // Reduced height by decreasing vertical padding
     color: "white",
     position: "relative",
   };
@@ -30,32 +28,16 @@ const Navbar = () => {
     marginRight: "10px",
   };
 
-  const dropdownStyle = {
-    display: menuOpen ? "block" : "none",
-    position: "absolute",
-    top: "60px",
-    right: "10px",
-    backgroundColor: "#034694", // Chelsea blue background
-    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-    borderRadius: "5px",
-    zIndex: 1000,
-  };
-
-  const dropdownLinkStyle = {
-    display: "block",
+  const linkStyle = {
     textDecoration: "none",
     color: "white",
     padding: "0.5rem 1rem",
     fontWeight: "bold",
-    borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
   };
 
-  const toggleButtonStyle = {
-    background: "none",
-    border: "none",
-    color: "white",
-    fontSize: "1.5rem",
-    cursor: "pointer",
+  const navLinksStyle = {
+    display: "flex",
+    gap: "1rem",
   };
 
   return (
@@ -70,43 +52,14 @@ const Navbar = () => {
         Angels Society
       </Link>
 
-      {/* Toggle Button for Small Screens */}
-      <button
-        style={toggleButtonStyle}
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle menu"
-      >
-        ☰
-      </button>
-
-      {/* Dropdown Menu */}
-      <ul style={dropdownStyle}>
-        <li>
-          <Link to="/" style={dropdownLinkStyle} onClick={() => setMenuOpen(false)}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/about" style={dropdownLinkStyle} onClick={() => setMenuOpen(false)}>
-            About
-          </Link>
-        </li>
-        <li>
-          <Link to="/programs" style={dropdownLinkStyle} onClick={() => setMenuOpen(false)}>
-            Programs
-          </Link>
-        </li>
-        <li>
-          <Link to="/get-involved" style={dropdownLinkStyle} onClick={() => setMenuOpen(false)}>
-            Get Involved
-          </Link>
-        </li>
-        <li>
-          <Link to="/contact" style={dropdownLinkStyle} onClick={() => setMenuOpen(false)}>
-            Contact
-          </Link>
-        </li>
-      </ul>
+      {/* Links */}
+      <div style={navLinksStyle}>
+        <Link to="/" style={linkStyle}>Home</Link>
+        <Link to="/programs" style={linkStyle}>Programs</Link>
+        <Link to="/get-involved" style={linkStyle}>Get Involved</Link>
+        <Link to="/about" style={linkStyle}>About</Link>
+        <Link to="/contact" style={linkStyle}>Contact</Link>
+      </div>
     </nav>
   );
 };
