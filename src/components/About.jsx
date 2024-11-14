@@ -65,7 +65,7 @@ const About = () => {
       </p>
 
       {/* Executives Section */}
-      <h3>Secreteriate</h3>
+      <h3>Secreteriat</h3>
       <div style={styles.tilesContainer}>
         {executives.map((executive, index) => (
           <div key={index} style={styles.tile}>

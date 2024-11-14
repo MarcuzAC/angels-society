@@ -57,8 +57,8 @@ const Navbar = () => {
         <Link to="/" style={linkStyle}>Home</Link>
         <Link to="/programs" style={linkStyle}>Programs</Link>
         <Link to="/get-involved" style={linkStyle}>Get Involved</Link>
-        <Link to="/about" style={linkStyle}>About</Link>
-        <Link to="/contact" style={linkStyle}>Contact</Link>
+        <Link to="/about" style={linkStyle}>About Us</Link>
+        <Link to="/contact" style={linkStyle}>Contact Us</Link>
       </div>
     </nav>
   );
