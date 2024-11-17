@@ -6,7 +6,6 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Programs from "./components/Programs";
 import GetInvolved from "./components/GetInvolved";
-import Contact from "./components/Contact";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -31,7 +30,6 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/programs" element={<Programs />} />
             <Route path="/get-involved" element={<GetInvolved />} />
-            <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
         <Footer />

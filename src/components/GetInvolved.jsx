@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 
+// Import images
+import joinImage from "../assets/join.jpeg";
+import donateImage from "../assets/donate.jpg";
+import involvementImage from "../assets/involvement.jpg";
+import Slider from "react-slick";
+
+// Setting up React Slick styles
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const GetInvolved = () => {
   const [formState, setFormState] = useState({
     involvementType: "",
@@ -54,12 +64,25 @@ const GetInvolved = () => {
     setSubmissionStatus(null);
   };
 
+  // Slider settings for swipe effect
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 3000, // auto scroll every 3 seconds
+    fade: true,
+  };
+
   return (
     <section
       style={{
         fontFamily: "Arial, sans-serif",
         padding: "20px",
-        maxWidth: "600px",
+        maxWidth: "800px",
         margin: "auto",
         backgroundColor: "#f9f9f9",
         borderRadius: "10px",
@@ -85,52 +108,99 @@ const GetInvolved = () => {
         Join us as a volunteer or supporter to make healthcare more accessible for everyone.
       </p>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          marginBottom: "20px",
-        }}
-      >
-        <button
-          style={{
-            padding: "10px 20px",
-            backgroundColor: "#007bff",
-            color: "#fff",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
-          onClick={() => handleOptionSelect("Request to Join Society")}
-        >
-          Request to Join Society
-        </button>
-        <button
-          style={{
-            padding: "10px 20px",
-            backgroundColor: "#28a745",
-            color: "#fff",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
-          onClick={() => handleOptionSelect("Make Donation")}
-        >
-          Make a Donation
-        </button>
-        <button
-          style={{
-            padding: "10px 20px",
-            backgroundColor: "#ffc107",
-            color: "#fff",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
-          onClick={() => handleOptionSelect("Other Involvement")}
-        >
-          Other Involvement
-        </button>
+      {/* Slider for swipeable images */}
+      <div style={{ marginBottom: "20px" }}>
+        <Slider {...sliderSettings}>
+          <div onClick={() => handleOptionSelect("Request to Join Society")}>
+            <img
+              src={joinImage}
+              alt="Join Society"
+              style={{
+                width: "100%",
+                height: "400px",
+                objectFit: "cover",
+                borderRadius: "10px",
+                cursor: "pointer",
+              }}
+            />
+            <button
+              style={{
+                position: "absolute",
+                bottom: "20px",
+                left: "50%",
+                transform: "translateX(-50%)",
+                padding: "10px",
+                backgroundColor: "#007bff",
+                color: "#fff",
+                border: "none",
+                borderRadius: "5px",
+                cursor: "pointer",
+              }}
+            >
+              Request to Join Society
+            </button>
+          </div>
+
+          <div onClick={() => handleOptionSelect("Make Donation")}>
+            <img
+              src={donateImage}
+              alt="Make a Donation"
+              style={{
+                width: "100%",
+                height: "400px",
+                objectFit: "cover",
+                borderRadius: "10px",
+                cursor: "pointer",
+              }}
+            />
+            <button
+              style={{
+                position: "absolute",
+                bottom: "20px",
+                left: "50%",
+                transform: "translateX(-50%)",
+                padding: "10px",
+                backgroundColor: "#28a745",
+                color: "#fff",
+                border: "none",
+                borderRadius: "5px",
+                cursor: "pointer",
+              }}
+            >
+              Make a Donation
+            </button>
+          </div>
+
+          <div onClick={() => handleOptionSelect("Other Involvement")}>
+            <img
+              src={involvementImage}
+              alt="Other Involvement"
+              style={{
+                width: "100%",
+                height: "400px",
+                objectFit: "cover",
+                borderRadius: "10px",
+                cursor: "pointer",
+              }}
+            />
+            <button
+              style={{
+                position: "absolute",
+                bottom: "20px",
+                left: "50%",
+                transform: "translateX(-50%)",
+                padding: "10px",
+                backgroundColor: "#ffc107",
+                color: "#fff",
+                border: "none",
+                borderRadius: "5px",
+                cursor: "pointer",
+              }}
+            >
+              Other Involvement
+            </button>
+          </div>
+        </Slider>
       </div>
 
       {submissionStatus && (
@@ -260,6 +330,7 @@ const GetInvolved = () => {
               border: "none",
               borderRadius: "5px",
               cursor: "pointer",
+              width: "100%",
             }}
           >
             Submit
