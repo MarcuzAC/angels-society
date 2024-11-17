@@ -4,6 +4,8 @@ import React from "react";
 import frankImage from "../assets/kaondo.jpeg";
 import nelsonImage from "../assets/nazo.jpeg";
 import kondwaImage from "../assets/kondwa.jpeg";
+import xanderImage from "../assets/xander.jpg";
+import trinityImage from "../assets/shawa.jpeg";
 
 // Dummy data for the executive members
 const executives = [
@@ -55,6 +57,40 @@ const board = [
   },
 ];
 
+// National Executive Members
+const national = [
+  {
+    name: "Trinity Shawa",
+    position: "Chair Person",
+    contact: "+265 999 55 77 88",
+    email: "trinity.shawa@example.com",
+    image: trinityImage,
+  },
+  {
+    name: "Alexander Chimbiza",
+    position: "Treasurer",
+    contact: "+265 999 11 12 18",
+    email: "treasure@anglessocietymw.com",
+    image: xanderImage,
+  },
+  {
+    name: "Chronicles Mphepo",
+    position: "Secretary",
+
+    contact: "+265 997 94 72 24",
+    email: "charlesm@gamil.com",
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Harry Daud Chisamba",
+
+    position: "Vice Chair",
+    contact: "+265 933 11 44 77",
+    email: "amos.phiri@example.com",
+    image: "https://via.placeholder.com/150",
+  },
+];
+
 const About = () => {
   return (
     <section style={styles.aboutSection}>
@@ -64,8 +100,30 @@ const About = () => {
         practitioners to bridge healthcare gaps in Malawi.
       </p>
 
+      {/* Mission and Vision */}
+      <div style={styles.missionVisionSection}>
+        <div style={styles.mission}>
+          <h3>Our Mission</h3>
+          <p>
+            Our mission is to mobilize medical students and healthcare
+            professionals to deliver essential medical services, health
+            education, and support to marginalized communities across Malawi.
+          </p>
+        </div>
+        <div style={styles.vision}>
+          <h3>Our Vision</h3>
+          <p>
+            At Angels Society, we envision a Malawi where every individual,
+            regardless of their socio-economic status, has access to
+            high-quality medical care. We strive to bridge the gap between
+            healthcare providers and the underserved communities, ensuring that
+            no one is left behind in their quest for health and wellbeing.
+          </p>
+        </div>
+      </div>
+
       {/* Executives Section */}
-      <h3>Secreteriat</h3>
+      <h3>Secreteriate</h3>
       <div style={styles.tilesContainer}>
         {executives.map((executive, index) => (
           <div key={index} style={styles.tile}>
@@ -95,11 +153,29 @@ const About = () => {
       <div style={styles.tilesContainer}>
         {board.map((member, index) => (
           <div key={index} style={styles.tile}>
-            <img
-              src={member.image}
-              alt={member.name}
-              style={styles.image}
-            />
+            <img src={member.image} alt={member.name} style={styles.image} />
+            <div style={styles.info}>
+              <h4>{member.name}</h4>
+              <p>
+                <strong>Position:</strong> {member.position}
+              </p>
+              <p>
+                <strong>Contact:</strong> {member.contact}
+              </p>
+              <p>
+                <strong>Email:</strong> {member.email}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* National Executive Members Section */}
+      <h3>National Executive Members</h3>
+      <div style={styles.tilesContainer}>
+        {national.map((member, index) => (
+          <div key={index} style={styles.tile}>
+            <img src={member.image} alt={member.name} style={styles.image} />
             <div style={styles.info}>
               <h4>{member.name}</h4>
               <p>
@@ -125,6 +201,27 @@ const styles = {
     padding: "2rem",
     textAlign: "center",
     backgroundColor: "#f4f4f4",
+  },
+  missionVisionSection: {
+    display: "flex",
+    justifyContent: "space-around",
+    marginTop: "2rem",
+  },
+  mission: {
+    width: "45%",
+    backgroundColor: "#fff",
+    padding: "1rem",
+    borderRadius: "8px",
+    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+    textAlign: "left",
+  },
+  vision: {
+    width: "45%",
+    backgroundColor: "#fff",
+    padding: "1rem",
+    borderRadius: "8px",
+    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+    textAlign: "left",
   },
   tilesContainer: {
     display: "grid",
